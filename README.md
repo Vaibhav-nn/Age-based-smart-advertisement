@@ -1,3 +1,39 @@
+#How to enable smart advertisement
+Open agegender_demo.py
+Initialize an empty list in global section (ageList)
+For running the web-cam for 6 seconds, do following- 
+
+ #Detection
+    t_end = time.time() + 6
+    while time.time() < t_end:
+        while time.time() < t_end:
+            #Face Detection
+            ret, frame = cap.read() #BGR
+    
+            #frame = cv2.imread("images/dress3.jpg")
+    
+            img=frame
+            img = img[...,::-1]  #BGR 2 RGB
+            inputs = img.copy() / 255.0
+            
+            img_cv = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
+            img_camera = cv2.resize(inputs, (416,416))
+            img_camera = np.expand_dims(img_camera, axis=0)
+            out2 = model_face.predict(img_camera)[0]
+            results = interpret_output_yolov2(out2, img.shape[1], img.shape[0])
+    
+            #Age and Gender Detection
+            
+            show_results(img_cv,results, img.shape[1], img.shape[0], model_age, model_gender, model_emotion)
+            print(ageList)
+    
+    a= sum(ageList)
+    n= int(len(ageList)) 
+    c= a/n
+    if 15<c<40:
+        startfile(r'C:\Data science\Tensorflow\YoloKerasFaceDetection\ADHM.mkv')
+
+
 # Yolo Keras Face Detection
 
 Implement Face detection, and Age and Gender Classification using Keras.
@@ -192,3 +228,6 @@ Gender (IMDB) (EPOCHS=25)
 <https://github.com/oarriaga/face_classification>
 
 <https://github.com/yu4u/age-gender-estimation>
+
+<https://github.com/abars/YoloKerasFaceDetection>
+
