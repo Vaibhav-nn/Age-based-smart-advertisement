@@ -37,8 +37,7 @@ For running the web-cam for 6 seconds, do following-
 
 Implement Face detection, and Age and Gender Classification using Keras.
 
-<img src="https://github.com/abars/YoloKerasFaceDetection/blob/master/pretrain/demo.jpg" width="50%" height="50%">
-(image from wider face dataset)
+
 
 # Overview
 
