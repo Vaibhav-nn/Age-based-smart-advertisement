@@ -3,7 +3,6 @@ Open agegender_demo.py
 Initialize an empty list in global section (ageList)
 For running the web-cam for 6 seconds, do following- 
 
- #Detection
     t_end = time.time() + 6
     while time.time() < t_end:
         while time.time() < t_end:
